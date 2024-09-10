@@ -16,20 +16,32 @@ abstract class ExerciseRepCounter {
         this.listener = listener
     }
 
+    /*
+    Increments the rep count by 1.
+     */
     fun incrementRepCount() {
         repCount++
         listener?.repCountUpdated(repCount)
     }
 
+    /*
+    Resets the rep count to 0.
+    */
     fun resetRepCount() {
         repCount = 0
         listener?.repCountUpdated(repCount)
     }
 
+    /*
+    Updates the progress bar. Should be a value between 0 and 1.
+     */
     fun sendProgressUpdate(progress: Float) {
         listener?.progressUpdated(progress)
     }
 
+    /*
+    Displays a feedback message.
+     */
     fun sendFeedbackMessage(message: String) {
         listener?.showFeedback(message)
     }
