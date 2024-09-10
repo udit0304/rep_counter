@@ -44,6 +44,7 @@ class ExerciseInfoView @JvmOverloads constructor(
     }
 
     fun setProgress(value: Float) {
-        progress.progress = (value * 100).toInt()
+        val coercedValue = value.coerceIn(0.0f, 1.0f)
+        progress.progress = (coercedValue * 100).toInt()
     }
 }
